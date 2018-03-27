@@ -10,7 +10,7 @@ hbs.registerHelper('doupper',(text)=>{
   return text.toUpperCase();
 });
 app.set('view engine','hbs'); //
-app.use(express.static(__dirname+'/public'));
+//app.use(express.static(__dirname+'/public'));
 app.get('/',(req,res)=>{
   // res.send("hello world!!");
    res.render('home.hbs',{
@@ -26,6 +26,12 @@ app.get('/about',(req,res)=>{
       some:"dummy",             ///key value kar k bhejte hai data ko
 
     });
+});
+app.get('/project',(req,res)=>{
+  res.render('project.hbs',{
+    project_name:"NODE JS MEAN DEVELOPER",
+    project_priority:"1"
+  })
 });
 app.get('/bad',(req,res)=>{
   res.send({
