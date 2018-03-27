@@ -1,6 +1,7 @@
 const express=require('express');
 const hbs=require('hbs');
 var app=express();
+const port=process.env.PORT||3000;
 hbs.registerPartials(__dirname+'/views/partial');
 hbs.registerHelper('date',()=>{
   return new Date().getFullYear();
@@ -32,6 +33,6 @@ app.get('/bad',(req,res)=>{
     samjhe:'jain',
   });
 });
-app.listen(3000,()=>{
-  console.log("app is running at port 3000");
+app.listen(port,()=>{
+  console.log(`app is running at port${port}`);
 });
